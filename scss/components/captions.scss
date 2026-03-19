@@ -1,0 +1,24 @@
+.caption {
+  text-transform: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1.caption,
+.caption--h1 {
+  font-size: 36px;
+  line-height: 40px;
+
+  @include responsive1023 {
+    font-size: 34px;
+    line-height: 36px;
+  }
+}
+
+h2.caption,
+.caption--h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+  letter-spacing: 0em;
+}

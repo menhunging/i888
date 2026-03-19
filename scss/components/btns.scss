@@ -1,0 +1,48 @@
+.btn {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0em;
+  border: solid 1px transparent;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none !important;
+  outline: none;
+  transition: all 0.3s;
+
+  @include responsive1023 {
+    font-size: 17px;
+    line-height: 19px;
+    height: 40px;
+  }
+
+  @include responsive767 {
+    height: 50px;
+  }
+
+  &.btn--orange {
+    background-color: $colorOrange;
+    color: $colorWhite;
+    border-color: $colorOrange;
+
+    @include hover {
+      background-color: transparent;
+      color: $colorDark;
+    }
+  }
+
+  &.btn--simple {
+    color: $colorDark;
+    border-color: $colorDark;
+
+    @include hover {
+      background-color: $colorDark;
+      color: $colorWhite;
+    }
+  }
+}
