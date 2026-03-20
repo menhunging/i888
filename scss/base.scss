@@ -1,7 +1,13 @@
 .secion-new {
-  max-width: 1250px;
+  width: 1270px;
+  max-width: 98%;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 40px 10px;
+
+  @include responsive1599 {
+    width: 100%;
+    margin: 0 auto;
+  }
 
   @include responsive1279 {
     max-width: 985px;
@@ -536,94 +542,6 @@ picture {
 
     @include hover {
       transform: scale(0.9);
-    }
-  }
-}
-
-.delivery-new {
-  .delivery-new__inner {
-    background-color: $colorWhite;
-    box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, 0.11);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 40px;
-    border-radius: 8px;
-
-    @include responsive1023 {
-      padding: 25px;
-    }
-
-    @include responsive767 {
-      flex-direction: column;
-      padding: 23px;
-      gap: 23px;
-    }
-  }
-
-  .delivery-new__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-
-    .caption {
-      position: relative;
-      margin-bottom: 14px;
-      display: block;
-
-      @include before {
-        background-color: $colorOrange;
-        width: 94px;
-        height: 2px;
-        top: calc(100% + 10px);
-        left: 0;
-      }
-    }
-  }
-
-  p {
-    max-width: 650px;
-    margin: 0;
-
-    @include responsive1279 {
-      max-width: 560px;
-    }
-
-    @include responsive1023 {
-      max-width: 435px;
-    }
-
-    @include responsive767 {
-      max-width: 100%;
-    }
-  }
-
-  .picture-block {
-    width: 442px;
-    height: 201px;
-
-    @include responsive1279 {
-      width: 380px;
-      height: 172px;
-    }
-
-    @include responsive1023 {
-      width: 265px;
-      height: 121px;
-    }
-  }
-
-  .delivery-new__link {
-    color: $colorOrange;
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    color: $colorOrange;
-    transition: text-decoration 0.3s;
-    margin-top: 8px;
-
-    @include hover {
-      text-decoration-color: transparent;
     }
   }
 }

@@ -728,7 +728,6 @@
 }
 
 .cardInfo-new {
-  width: 100%;
   font-weight: 300;
   font-size: 17px;
   line-height: 19px;
@@ -1097,14 +1096,16 @@
 }
 
 .chosen-clients {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .chosen-clients__slider {
   margin-top: 32px;
 
   @include responsive767 {
-    margin-left: -15px;
-    width: calc(100% + 30px);
     margin-top: 24px;
     padding-left: 10px;
     padding-right: 10px;
@@ -1222,6 +1223,20 @@
 
 .chosen-clients__head {
   position: relative;
+  width: 1270px;
+  max-width: 98%;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @include responsive1599 {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @include responsive1279 {
+    max-width: 985px;
+  }
 
   .swiper-controls-simple {
     @include responsive767 {
@@ -1313,6 +1328,26 @@
 
 .simple-slider {
   padding-bottom: 0;
+
+  & + .simple-slider {
+    background-color: #f6f6f6;
+  }
+
+  .simple-slider__inner {
+    width: 1270px;
+    max-width: 98%;
+    margin: 0 auto;
+    padding: 40px 10px;
+
+    @include responsive1599 {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    @include responsive1279 {
+      max-width: 985px;
+    }
+  }
 }
 
 .simple-slider__head {
@@ -1331,7 +1366,7 @@
   }
 
   .swiper-wrapper {
-    min-height: 475px;
+    min-height: 502px;
     padding-bottom: 20px;
 
     @include responsive1279 {
@@ -1409,6 +1444,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: column;
     gap: 10px;
   }
 
@@ -1443,6 +1479,12 @@
     }
 
     .product-new__text {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+      max-width: 100%;
+      white-space: nowrap;
     }
   }
 
@@ -1506,5 +1548,120 @@
 
   .picture-block__dot.is-active {
     background-color: $colorOrange;
+  }
+}
+
+.delivery-new {
+  background-color: #f6f6f6;
+  padding: 60px 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @include responsive1279 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 40px 10px;
+  }
+
+  @include responsive767 {
+    padding: 32px 10px;
+  }
+
+  .delivery-new__inner {
+    background-color: $colorWhite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 45px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+
+    @include responsive1599 {
+      width: 100%;
+      max-width: 98%;
+      margin: 0 auto;
+    }
+
+    @include responsive1279 {
+      max-width: 965px;
+    }
+
+    @include responsive1023 {
+      padding: 25px;
+    }
+
+    @include responsive767 {
+      flex-direction: column;
+      padding: 23px;
+      gap: 23px;
+    }
+  }
+
+  .delivery-new__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+    .caption {
+      position: relative;
+      margin-bottom: 14px;
+      display: block;
+
+      @include before {
+        background-color: $colorOrange;
+        width: 94px;
+        height: 2px;
+        top: calc(100% + 10px);
+        left: 0;
+      }
+    }
+  }
+
+  p {
+    max-width: 650px;
+    margin: 0;
+
+    @include responsive1279 {
+      max-width: 560px;
+    }
+
+    @include responsive1023 {
+      max-width: 435px;
+    }
+
+    @include responsive767 {
+      max-width: 100%;
+    }
+  }
+
+  .picture-block {
+    width: 442px;
+    height: 201px;
+
+    @include responsive1279 {
+      width: 380px;
+      height: 172px;
+    }
+
+    @include responsive1023 {
+      width: 265px;
+      height: 121px;
+    }
+  }
+
+  .delivery-new__link {
+    color: $colorOrange;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: $colorOrange;
+    transition: text-decoration 0.3s;
+    margin-top: 8px;
+
+    @include hover {
+      text-decoration-color: transparent;
+    }
   }
 }
