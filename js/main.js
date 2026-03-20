@@ -61,6 +61,48 @@ $(document).ready(function () {
     });
   }
 
+  if ($(".simple-slider").length > 0) {
+    $(".simple-slider").each(function () {
+      const sliderWrapper = $(this);
+
+      const slider = new Swiper(
+        sliderWrapper.find(".simple-slider__slider")[0],
+        {
+          spaceBetween: 24,
+          slidesPerView: 4,
+
+          pagination: {
+            el: sliderWrapper.find(".swiper-pagination")[0],
+            clickable: true,
+          },
+
+          navigation: {
+            nextEl: sliderWrapper.find(".btnSwiperNext")[0],
+            prevEl: sliderWrapper.find(".btnSwiperPrev")[0],
+          },
+
+          breakpoints: {
+            320: {
+              slidesPerView: 1.2,
+              spaceBetween: 10,
+            },
+            768: {
+              spaceBetween: 16,
+              slidesPerView: 3,
+            },
+            1024: {
+              spaceBetween: 18,
+              slidesPerView: 3,
+            },
+            1280: {
+              slidesPerView: 4,
+            },
+          },
+        },
+      );
+    });
+  }
+
   if ($(".cardProduct-color").length > 0) {
     $(document).on("click", ".cardProduct-color", function () {
       $(".cardProduct-color__list").slideUp(100);
@@ -127,6 +169,84 @@ $(document).ready(function () {
     $(".cardInfo-new__more").on("click", function () {
       $(this).hide();
       $(".cardInfo-new__left").attr("style", "height:auto;max-height:initial");
+    });
+  }
+
+  if ($(".video-block").length > 0) {
+    const videoBlock = $(".video-block");
+    const video = videoBlock.find("video");
+    const playBtn = videoBlock.find(".video-block__play");
+
+    playBtn.on("click", function () {
+      const videoEl = video.get(0);
+
+      video.prop("controls", true);
+      videoEl.play();
+
+      playBtn.hide();
+    });
+
+    video.on("pause", function () {
+      playBtn.show();
+    });
+  }
+
+  if ($(".product-new").length > 0) {
+    $(".product-new .picture-block").each(function () {
+      const block = $(this);
+      const img = block.find("img");
+      const dotsWrap = block.find(".picture-block__dots");
+
+      const images = block.data("images");
+      const total = images.length;
+
+      let isHover = false;
+
+      for (let i = 0; i < total; i++) {
+        dotsWrap.append('<span class="picture-block__dot"></span>');
+      }
+
+      const dots = dotsWrap.find(".picture-block__dot");
+
+      function setActive(index) {
+        dots.removeClass("is-active");
+        dots.eq(index).addClass("is-active");
+      }
+
+      // preload
+      images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+
+      block.on("mouseenter", function () {
+        isHover = true;
+      });
+
+      block.on("mouseleave", function () {
+        isHover = false;
+        img.attr("src", images[0]);
+        setActive(0);
+      });
+
+      block.on("mousemove", function (e) {
+        if (!isHover) return;
+
+        const offset = block.offset();
+        const width = block.outerWidth();
+        const x = e.pageX - offset.left;
+
+        let progress = x / width;
+        progress = Math.max(0, Math.min(1, progress));
+
+        const index = Math.round(progress * (total - 1));
+
+        img.attr("src", images[index]);
+        setActive(index);
+      });
+
+      // начальное состояние
+      setActive(0);
     });
   }
 });
