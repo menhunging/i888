@@ -837,6 +837,10 @@
     flex-wrap: wrap;
     gap: 13px;
 
+    @include responsive1023 {
+      gap: 10px;
+    }
+
     a {
       display: flex;
       flex-wrap: wrap;
@@ -854,6 +858,10 @@
       text-decoration: underline;
       text-decoration-color: transparent;
       transition: all 0.3s;
+
+      @include responsive1023 {
+        gap: 8px;
+      }
 
       @include responsive767 {
         font-size: 15px;
@@ -946,10 +954,12 @@
 
   @include responsive1023 {
     width: 50%;
+    margin-top: 0;
   }
 
   @include responsive767 {
     width: 100%;
+    margin-top: 25px;
   }
 
   .packageInfo__title {
@@ -1006,7 +1016,7 @@
   cursor: pointer;
   font-weight: 500;
   position: absolute;
-  bottom: 4px;
+  bottom: 0;
   right: 0;
   background-color: #fff;
   padding-left: 15px;
@@ -1389,6 +1399,7 @@
 
 .product-new {
   border: solid 1px #bfbfbf;
+  background-color: $colorWhite;
 
   @include hover {
     .product--hidden {
@@ -1479,7 +1490,6 @@
     }
 
     .product-new__text {
-      display: block;
       overflow: hidden;
       text-overflow: ellipsis;
       width: 100%;

@@ -7,6 +7,7 @@
 @media (max-width: 1599px) {
   .secion-new {
     width: 100%;
+    max-width: 1270px;
     margin: 0 auto;
   }
 }
@@ -1533,6 +1534,11 @@ h2.caption,
   flex-wrap: wrap;
   gap: 13px;
 }
+@media (max-width: 1023px) {
+  .filteDown .filteDown-list__hor {
+    gap: 10px;
+  }
+}
 .filteDown .filteDown-list__hor a {
   display: flex;
   flex-wrap: wrap;
@@ -1550,6 +1556,11 @@ h2.caption,
   text-decoration: underline;
   text-decoration-color: transparent;
   transition: all 0.3s;
+}
+@media (max-width: 1023px) {
+  .filteDown .filteDown-list__hor a {
+    gap: 8px;
+  }
 }
 @media (max-width: 767px) {
   .filteDown .filteDown-list__hor a {
@@ -1643,11 +1654,13 @@ h2.caption,
 @media (max-width: 1023px) {
   .packageInfo {
     width: 50%;
+    margin-top: 0;
   }
 }
 @media (max-width: 767px) {
   .packageInfo {
     width: 100%;
+    margin-top: 25px;
   }
 }
 .packageInfo .packageInfo__ul {
@@ -1696,7 +1709,7 @@ h2.caption,
   cursor: pointer;
   font-weight: 500;
   position: absolute;
-  bottom: 4px;
+  bottom: 0;
   right: 0;
   background-color: #fff;
   padding-left: 15px;
@@ -2097,6 +2110,7 @@ h2.caption,
 
 .product-new {
   border: solid 1px #bfbfbf;
+  background-color: rgb(255, 255, 255);
 }
 @media (hover: hover) {
   .product-new:hover .product--hidden {
@@ -2173,7 +2187,6 @@ h2.caption,
   color: #2b2b2b;
 }
 .product-new .product-new__data .product-new__text {
-  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
