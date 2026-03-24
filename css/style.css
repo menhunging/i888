@@ -1677,7 +1677,7 @@ h2.caption,
   background-image: url("../img/bg-package.png");
   background-image: image-set(url("../img/bg-package.webp") type("image/webp"), url("../img/bg-package.png") type("image/png"));
   background-position: bottom;
-  background-size: contain;
+  background-size: 140%;
   background-repeat: no-repeat;
   background-color: #f6f6f6;
   padding: 15px 15px;
