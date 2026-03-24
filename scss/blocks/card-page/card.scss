@@ -748,15 +748,41 @@
 
   .cardInfo-new__left {
     width: calc(100% - 402px - 23px);
-    height: 100%;
-    max-height: 692px;
-    overflow: hidden;
     position: relative;
 
     @include responsive1023 {
       width: 100%;
       max-width: 100%;
+    }
+  }
+
+  .cardInfo-new__content {
+    width: 100%;
+    height: 100%;
+    max-height: 692px;
+    overflow: hidden;
+    position: relative;
+
+    &.opened {
+      &::after {
+        display: none;
+      }
+    }
+
+    @include responsive1023 {
+      width: 100%;
+      max-width: 100%;
       max-height: 241px;
+    }
+
+    @include after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      background: linear-gradient(transparent, #fff);
+      pointer-events: none;
     }
   }
 
@@ -1023,51 +1049,21 @@
 .cardInfo-new__more {
   cursor: pointer;
   font-weight: 500;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: #fff;
-  padding-left: 15px;
-  text-decoration: none;
-  color: transparent;
+  text-decoration: underline;
   display: none;
+  margin-top: 20px;
+  text-decoration-color: transparent;
 
   @include responsive1023 {
     bottom: 0;
   }
 
   &.visible {
-    display: inline;
-  }
-
-  @include before {
-    right: 0;
-    width: 1000%;
-    height: 200%;
-    bottom: 0;
-    box-shadow: inset 20px 88px 20px rgba(255, 255, 255, 0.77);
-  }
-
-  @include after {
-    content: attr(data-title);
-    right: -15px;
-    top: 0;
-    z-index: 3;
-    color: $colorDark;
-    width: 100%;
-    height: 100%;
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    cursor: pointer;
+    display: flex;
   }
 
   @include hover {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-
-    &:after {
-      text-decoration-color: $colorDark;
-    }
+    text-decoration-color: $colorDark;
   }
 }
 

@@ -1454,17 +1454,42 @@ h2.caption,
 }
 .cardInfo-new .cardInfo-new__left {
   width: calc(100% - 402px - 23px);
-  height: 100%;
-  max-height: 692px;
-  overflow: hidden;
   position: relative;
 }
 @media (max-width: 1023px) {
   .cardInfo-new .cardInfo-new__left {
     width: 100%;
     max-width: 100%;
+  }
+}
+.cardInfo-new .cardInfo-new__content {
+  width: 100%;
+  height: 100%;
+  max-height: 692px;
+  overflow: hidden;
+  position: relative;
+}
+.cardInfo-new .cardInfo-new__content.opened::after {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .cardInfo-new .cardInfo-new__content {
+    width: 100%;
+    max-width: 100%;
     max-height: 241px;
   }
+}
+.cardInfo-new .cardInfo-new__content::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(transparent, #fff);
+  pointer-events: none;
 }
 .cardInfo-new .cardInfo-new__right {
   width: 402px;
@@ -1718,14 +1743,10 @@ h2.caption,
 .cardInfo-new__more {
   cursor: pointer;
   font-weight: 500;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background-color: #fff;
-  padding-left: 15px;
-  text-decoration: none;
-  color: transparent;
+  text-decoration: underline;
   display: none;
+  margin-top: 20px;
+  text-decoration-color: transparent;
 }
 @media (max-width: 1023px) {
   .cardInfo-new__more {
@@ -1733,39 +1754,10 @@ h2.caption,
   }
 }
 .cardInfo-new__more.visible {
-  display: inline;
-}
-.cardInfo-new__more::before {
-  content: "";
-  position: absolute;
-  transition: all 0.3s;
-  right: 0;
-  width: 1000%;
-  height: 200%;
-  bottom: 0;
-  box-shadow: inset 20px 88px 20px rgba(255, 255, 255, 0.77);
-}
-.cardInfo-new__more::after {
-  content: "";
-  position: absolute;
-  transition: all 0.3s;
-  content: attr(data-title);
-  right: -15px;
-  top: 0;
-  z-index: 3;
-  color: #2b2b2b;
-  width: 100%;
-  height: 100%;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  cursor: pointer;
+  display: flex;
 }
 @media (hover: hover) {
   .cardInfo-new__more:hover {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-  }
-  .cardInfo-new__more:hover:after {
     text-decoration-color: #2b2b2b;
   }
 }

@@ -160,12 +160,9 @@ $(document).ready(function () {
     });
   }
 
-  if ($(".cardInfo-new__left").length > 0) {
+  if ($(".cardInfo-new__content").length > 0) {
     const height = isTablet() ? 241 : 692; // пока так поставим, потом может подумаем как высоту менять
-    const heightBlock = $(".cardInfo-new__left").outerHeight();
-
-    console.log(height);
-    console.log(heightBlock);
+    const heightBlock = $(".cardInfo-new__content").outerHeight();
 
     if (heightBlock >= height) {
       $(".cardInfo-new__more").addClass("visible");
@@ -173,7 +170,11 @@ $(document).ready(function () {
 
     $(".cardInfo-new__more").on("click", function () {
       $(this).hide();
-      $(".cardInfo-new__left").attr("style", "height:auto;max-height:initial");
+      $(".cardInfo-new__content").addClass("opened");
+      $(".cardInfo-new__content").attr(
+        "style",
+        "height:auto;max-height:initial",
+      );
     });
   }
 
