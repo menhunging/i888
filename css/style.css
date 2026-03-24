@@ -2285,7 +2285,7 @@ h2.caption,
 @media (max-width: 1599px) {
   .delivery-new .delivery-new__inner {
     width: 100%;
-    max-width: 98%;
+    max-width: 1270px;
     margin: 0 auto;
   }
 }
