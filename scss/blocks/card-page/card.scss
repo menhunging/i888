@@ -1357,6 +1357,7 @@
 
     @include responsive1599 {
       width: 100%;
+      max-width: 1270px;
       margin: 0 auto;
     }
 
@@ -1596,7 +1597,7 @@
 
     @include responsive1599 {
       width: 100%;
-      max-width: 1270px;
+      max-width: 1250px;
       margin: 0 auto;
     }
 

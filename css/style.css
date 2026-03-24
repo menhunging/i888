@@ -2067,6 +2067,7 @@ h2.caption,
 @media (max-width: 1599px) {
   .simple-slider .simple-slider__inner {
     width: 100%;
+    max-width: 1270px;
     margin: 0 auto;
   }
 }
@@ -2285,7 +2286,7 @@ h2.caption,
 @media (max-width: 1599px) {
   .delivery-new .delivery-new__inner {
     width: 100%;
-    max-width: 1270px;
+    max-width: 1250px;
     margin: 0 auto;
   }
 }
