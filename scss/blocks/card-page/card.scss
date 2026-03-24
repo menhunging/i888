@@ -55,6 +55,10 @@
   width: 100%;
   height: 626px;
 
+  @include responsive1549 {
+    height: 424px;
+  }
+
   @include responsive1279 {
     height: 515px;
   }
@@ -738,6 +742,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
+  @include responsive767 {
+    padding-bottom: 10px;
+  }
+
   .cardInfo-new__left {
     width: calc(100% - 402px - 23px);
     height: 100%;
@@ -1074,7 +1082,7 @@
 
   .picture-block {
     width: 50%;
-    padding-top: calc(4 / 6 * 100%);
+    padding-top: calc(1100 / 2020 * 100%);
   }
 }
 
@@ -1241,6 +1249,7 @@
 
   @include responsive1599 {
     width: 100%;
+    max-width: 1270px;
     margin: 0 auto;
   }
 
@@ -1338,6 +1347,7 @@
 
 .simple-slider {
   padding-bottom: 0;
+  overflow: hidden;
 
   & + .simple-slider {
     background-color: #f6f6f6;

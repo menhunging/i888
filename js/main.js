@@ -34,6 +34,11 @@ $(document).ready(function () {
       spaceBetween: 0,
       slidesPerView: 3,
 
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+
       pagination: {
         el: $(".chosen-clients .swiper-pagination").toArray(),
         clickable: true,
