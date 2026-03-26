@@ -1736,3 +1736,25 @@
     }
   }
 }
+
+// Fancybox thumbs in the opened gallery
+.fancybox__container {
+  --fancybox-thumbs-width: 112px;
+  --fancybox-thumbs-ratio: 1;
+
+  @include responsive767 {
+    --fancybox-thumbs-width: 72px;
+  } 
+}
+
+.fancybox__thumbs {
+  padding: 0 6px 6px;
+
+  .carousel__slide {
+    padding: 6px;
+  }
+}
+
+.fancybox__thumb {
+  border-radius: 8px;
+}

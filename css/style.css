@@ -2423,4 +2423,25 @@ h2.caption,
   }
 }
 
+.fancybox__container {
+  --fancybox-thumbs-width: 112px;
+  --fancybox-thumbs-ratio: 1;
+}
+@media (max-width: 767px) {
+  .fancybox__container {
+    --fancybox-thumbs-width: 72px;
+  }
+}
+
+.fancybox__thumbs {
+  padding: 0 6px 6px;
+}
+.fancybox__thumbs .carousel__slide {
+  padding: 6px;
+}
+
+.fancybox__thumb {
+  border-radius: 8px;
+}
+
 /*# sourceMappingURL=style.css.map */
