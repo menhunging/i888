@@ -82,8 +82,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 70%;
-      height: 70%;
+      width: 82%;
+      height: 82%;
       transform: translate(-50%, -50%);
 
       img {
@@ -120,6 +120,27 @@
   margin-top: 14px;
   height: 139px;
   width: 100%;
+  position: relative;
+
+  &.is-end {
+    &::after {
+      display: none;
+    }
+  }
+
+  @include after {
+    background: linear-gradient(
+      88.57deg,
+      rgba(37, 16, 16, 0) 2.17%,
+      #ffffff 98.83%
+    );
+    right: 0;
+    top: 0;
+    width: 107px;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+  }
 
   @include responsive1279 {
     height: 113px;
@@ -210,7 +231,7 @@
   top: 20px;
   right: 20px;
   width: 57px;
-  height: 23px;
+  height: 30px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -617,6 +638,15 @@
     }
   }
 
+  &--notChange {
+    cursor: auto;
+    padding-right: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
   @include after {
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.75 0.75L6.75 6.75L12.75 0.75' stroke='%232B2B2B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
     background-position: center;
@@ -641,7 +671,7 @@
   margin: 0;
   padding: 0;
   background-color: rgb(255, 255, 255);
-  padding: 8px 32px;
+  padding: 5px 20px;
   z-index: 3;
   box-shadow: 2px 2px 10px rgba(57, 57, 57, 0.3);
   position: absolute;
@@ -666,25 +696,31 @@
       transition: text-decoration 0.3s;
       color: $colorDark;
       text-decoration-skip-ink: none;
-      text-align: right;
+      text-align: left;
       display: block;
+      white-space: nowrap;
+      transition: color 0.3s;
 
       &.active {
         color: $colorOrange;
-
-        @include hover {
-          text-decoration-color: $colorOrange;
-        }
       }
 
       @include hover {
-        text-decoration-color: $colorDark;
+        color: $colorOrange;
       }
     }
   }
 }
 
 .cardProduct-color__change {
+  .cardProduct-color__bgcolor {
+    margin-right: 5px;
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
 
 .all-characteristics-link {
@@ -977,7 +1013,7 @@
     url("../img/bg-package.png") type("image/png")
   );
   background-position: bottom;
-  background-size: 140%;
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: #f6f6f6;
   padding: 15px 15px;
@@ -1052,10 +1088,20 @@
   text-decoration: underline;
   display: none;
   margin-top: 20px;
+  transition: text-decoration-color 0.3s;
   text-decoration-color: transparent;
+  text-decoration-skip-ink: none;
 
   @include responsive1023 {
     bottom: 0;
+  }
+
+  &.active {
+    text-decoration-color: $colorDark;
+
+    @include hover {
+      text-decoration-color: transparent;
+    }
   }
 
   &.visible {
@@ -1383,7 +1429,7 @@
   }
 
   .swiper-wrapper {
-    min-height: 502px;
+    min-height: 512px;
     padding-bottom: 20px;
 
     @include responsive1279 {
@@ -1421,6 +1467,7 @@
   .product-new__top {
     position: relative;
     overflow: hidden;
+    padding-bottom: 15px;
 
     .cardProduct-new__status {
       top: 7px;
@@ -1438,23 +1485,30 @@
     }
 
     .cardProduct-new__data {
-      bottom: 25px;
+      bottom: 15px;
       left: 7px;
       font-size: 14px;
+      transition: bottom 0.3s;
 
       @include responsive1279 {
         bottom: 7px;
       }
     }
+
+    @include hover {
+      .cardProduct-new__data {
+        bottom: 17px;
+      }
+    }
   }
 
   .product-new__content {
-    padding: 20px 17px;
+    padding: 10px 17px 20px;
     min-height: 176px;
     position: relative;
 
     @include responsive1279 {
-      padding: 16px 8px;
+      padding: 6px 8px 16px;
     }
   }
 
@@ -1548,7 +1602,7 @@
   .picture-block__dots {
     position: absolute;
     left: 0;
-    bottom: 10px;
+    bottom: -15px;
     width: 100%;
     display: flex;
     gap: 6px;

@@ -1,5 +1,13 @@
 $(document).ready(function () {
   if ($(".cardProduct-slider").length > 0) {
+    const toggleCardProductSliderEndClass = () => {
+      const $smallSlider = $(".cardProduct-slider--small");
+      const $lastSlide = $smallSlider.find(".swiper-slide").last();
+      const isLastSlideVisible = $lastSlide.hasClass("swiper-slide-visible");
+
+      $smallSlider.toggleClass("is-end", isLastSlideVisible);
+    };
+
     const cardProductSmall = new Swiper(".cardProduct-slider--small", {
       spaceBetween: 10,
       slidesPerView: 4,
@@ -15,6 +23,24 @@ $(document).ready(function () {
           slidesPerView: 4,
         },
       },
+
+      on: {
+        init() {
+          requestAnimationFrame(toggleCardProductSliderEndClass);
+        },
+        slideChange() {
+          requestAnimationFrame(toggleCardProductSliderEndClass);
+        },
+        transitionEnd() {
+          requestAnimationFrame(toggleCardProductSliderEndClass);
+        },
+        resize() {
+          requestAnimationFrame(toggleCardProductSliderEndClass);
+        },
+        breakpoint() {
+          requestAnimationFrame(toggleCardProductSliderEndClass);
+        },
+      },
     });
 
     const cardProduct = new Swiper(".cardProduct-slider", {
@@ -26,6 +52,29 @@ $(document).ready(function () {
       thumbs: {
         swiper: cardProductSmall,
       },
+      on: {
+        init() {
+          requestAnimationFrame(toggleCardProductSliderEndClass);
+        },
+        slideChange() {
+          requestAnimationFrame(toggleCardProductSliderEndClass);
+        },
+        transitionEnd() {
+          requestAnimationFrame(toggleCardProductSliderEndClass);
+        },
+      },
+    });
+
+    $(".cardProduct-slider__desc").on("click", function (e) {
+      e.preventDefault();
+
+      const firstVideoLink = $(".cardProduct-slider")
+        .find(".playVideoLink")
+        .first();
+
+      if (firstVideoLink.length > 0) {
+        firstVideoLink.get(0).click();
+      }
     });
   }
 
@@ -169,12 +218,26 @@ $(document).ready(function () {
     }
 
     $(".cardInfo-new__more").on("click", function () {
-      $(this).hide();
-      $(".cardInfo-new__content").addClass("opened");
-      $(".cardInfo-new__content").attr(
-        "style",
-        "height:auto;max-height:initial",
-      );
+      const content = $(".cardInfo-new__content");
+      const button = $(this);
+      const parentsBlock = content.closest(".cardInfo-new");
+      const isOpened = content.toggleClass("opened").hasClass("opened");
+
+      button.toggleClass("active", isOpened);
+      button.text(isOpened ? button.data("less") : button.data("more"));
+
+      if (isOpened) {
+        content.attr("style", "height:auto;max-height:initial");
+      } else {
+        content.removeAttr("style");
+
+        $("html, body").animate(
+          {
+            scrollTop: parentsBlock.offset().top,
+          },
+          400,
+        );
+      }
     });
   }
 
