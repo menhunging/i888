@@ -906,6 +906,7 @@ h2.caption,
   border-color: #f35c14;
 }
 .cardProduct-slider__desc {
+  cursor: pointer;
   font-weight: 400;
   font-size: 17px;
   color: #0088d0;
