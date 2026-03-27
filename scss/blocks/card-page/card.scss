@@ -1121,11 +1121,16 @@
   text-decoration-skip-ink: none;
   position: absolute;
   right: 0;
-  bottom: 33px;
+  bottom: 4px;
+  z-index: 3;
   background-color: $colorWhite;
 
+  @include responsive1279 {
+    bottom: 6px;
+  }
+
   @include responsive1023 {
-    bottom: -2px;
+    bottom: -1px;
   }
 
   &.active {

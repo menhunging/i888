@@ -1812,12 +1812,18 @@ h2.caption,
   text-decoration-skip-ink: none;
   position: absolute;
   right: 0;
-  bottom: 33px;
+  bottom: 4px;
+  z-index: 3;
   background-color: rgb(255, 255, 255);
+}
+@media (max-width: 1279px) {
+  .cardInfo-new__more {
+    bottom: 6px;
+  }
 }
 @media (max-width: 1023px) {
   .cardInfo-new__more {
-    bottom: -2px;
+    bottom: -1px;
   }
 }
 .cardInfo-new__more.active {
