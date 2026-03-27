@@ -18,11 +18,10 @@
   @include responsive1023 {
     font-size: 17px;
     line-height: 19px;
-    height: 40px;
   }
 
   @include responsive767 {
-    height: 45px;
+    height: 55px;
   }
 
   &.btn--orange {
