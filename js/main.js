@@ -124,6 +124,7 @@ $(document).ready(function () {
         {
           spaceBetween: 24,
           slidesPerView: 4,
+          watchSlidesProgress: true,
 
           pagination: {
             el: sliderWrapper.find(".swiper-pagination")[0],

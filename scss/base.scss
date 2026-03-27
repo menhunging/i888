@@ -518,6 +518,11 @@ picture {
     display: flex;
     transition: all 0.3s;
 
+    @include responsive767 {
+      width: 15px;
+      height: 15px;
+    }
+
     @include hover {
       transform: scale(0.9);
     }
@@ -528,6 +533,10 @@ picture {
     height: 2px;
     background-color: rgba(183, 183, 183, 0.8);
     position: relative;
+
+    @include responsive767 {
+      width: 70px;
+    }
   }
 
   .btnSwiperNext {
@@ -540,6 +549,11 @@ picture {
     height: 25px;
     display: flex;
     transition: all 0.3s;
+
+    @include responsive767 {
+      width: 15px;
+      height: 15px;
+    }
 
     @include hover {
       transform: scale(0.9);
