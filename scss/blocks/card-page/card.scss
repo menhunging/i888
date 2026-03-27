@@ -807,6 +807,7 @@
 
   @include responsive767 {
     padding-bottom: 10px;
+    text-align: left;
   }
 
   .cardInfo-new__left {
@@ -1477,6 +1478,7 @@
     margin: 0 auto;
     justify-content: center;
     z-index: 1;
+    min-height: 25px;
   }
 
   .swiper-pagination-lock,

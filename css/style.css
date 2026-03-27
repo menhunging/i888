@@ -1510,6 +1510,7 @@ h2.caption,
 @media (max-width: 767px) {
   .cardInfo-new {
     padding-bottom: 10px;
+    text-align: left;
   }
 }
 .cardInfo-new .cardInfo-new__left {
@@ -2186,6 +2187,7 @@ h2.caption,
   margin: 0 auto;
   justify-content: center;
   z-index: 1;
+  min-height: 25px;
 }
 .simple-slider__slider .swiper-pagination-lock,
 .simple-slider__slider .swiper-button-lock {
