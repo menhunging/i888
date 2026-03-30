@@ -1077,6 +1077,11 @@
     letter-spacing: 0em;
     margin-top: 16px;
     margin-bottom: 177px;
+
+    @include responsive767 {
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
 
   .packageInfo__li {
@@ -1096,8 +1101,12 @@
       margin-right: 10px;
       padding-top: 4px;
 
+      @include responsive767 {
+        margin-right: 0;
+        max-width: 145px;
+      }
+
       @include responsive389 {
-        min-width: 150px;
       }
     }
 
@@ -1496,7 +1505,6 @@
     @include responsive1279 {
     }
   }
-
 }
 
 .product-new {

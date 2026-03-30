@@ -1791,6 +1791,12 @@ h2.caption,
   margin-top: 16px;
   margin-bottom: 177px;
 }
+@media (max-width: 767px) {
+  .packageInfo .packageInfo__ul {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
 .packageInfo .packageInfo__li {
   font-weight: 400;
   display: flex;
@@ -1807,9 +1813,10 @@ h2.caption,
   margin-right: 10px;
   padding-top: 4px;
 }
-@media (max-width: 389px) {
+@media (max-width: 767px) {
   .packageInfo .packageInfo__li > span:first-child {
-    min-width: 150px;
+    margin-right: 0;
+    max-width: 145px;
   }
 }
 .packageInfo .packageInfo__li > * {
