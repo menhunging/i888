@@ -141,6 +141,14 @@ $(document).ready(function () {
               slidesPerView: 1.2,
               spaceBetween: 10,
             },
+            480: {
+              spaceBetween: 16,
+              slidesPerView: 1.8,
+            },
+            640: {
+              spaceBetween: 16,
+              slidesPerView: 2.2,
+            },
             768: {
               spaceBetween: 16,
               slidesPerView: 3,

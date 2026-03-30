@@ -1774,6 +1774,7 @@ h2.caption,
   .packageInfo {
     width: 100%;
     margin-top: 25px;
+    max-width: 440px;
   }
 }
 .packageInfo .packageInfo__ul {
