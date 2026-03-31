@@ -1774,7 +1774,12 @@ h2.caption,
   .packageInfo {
     width: 100%;
     margin-top: 25px;
-    max-width: 440px;
+    min-height: 500px;
+  }
+}
+@media (max-width: 389px) {
+  .packageInfo {
+    min-height: 400px;
   }
 }
 .packageInfo .packageInfo__ul {
@@ -1791,7 +1796,7 @@ h2.caption,
   margin-top: 16px;
   margin-bottom: 177px;
 }
-@media (max-width: 767px) {
+@media (max-width: 389px) {
   .packageInfo .packageInfo__ul {
     font-size: 12px;
     line-height: 16px;
@@ -1813,7 +1818,7 @@ h2.caption,
   margin-right: 10px;
   padding-top: 4px;
 }
-@media (max-width: 767px) {
+@media (max-width: 389px) {
   .packageInfo .packageInfo__li > span:first-child {
     margin-right: 0;
     max-width: 145px;
@@ -2358,6 +2363,7 @@ h2.caption,
 }
 .product-new .product-new__artlicul {
   margin-left: 5px;
+  color: #2b2b2b;
 }
 .product-new .icon3d {
   position: absolute;

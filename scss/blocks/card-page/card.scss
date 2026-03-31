@@ -1058,7 +1058,11 @@
   @include responsive767 {
     width: 100%;
     margin-top: 25px;
-    max-width: 440px;
+    min-height: 500px;
+  }
+
+  @include responsive389 {
+    min-height: 400px;
   }
 
   .packageInfo__title {
@@ -1079,6 +1083,9 @@
     margin-bottom: 177px;
 
     @include responsive767 {
+    }
+
+    @include responsive389 {
       font-size: 12px;
       line-height: 16px;
     }
@@ -1102,12 +1109,14 @@
       padding-top: 4px;
 
       @include responsive767 {
+        
+      }
+
+      @include responsive389 {
         margin-right: 0;
         max-width: 145px;
       }
 
-      @include responsive389 {
-      }
     }
 
     & > * {
@@ -1655,6 +1664,7 @@
 
   .product-new__artlicul {
     margin-left: 5px;
+    color: $colorDark;
   }
 
   .icon3d {
