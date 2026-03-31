@@ -1109,14 +1109,12 @@
       padding-top: 4px;
 
       @include responsive767 {
-        
       }
 
       @include responsive389 {
         margin-right: 0;
         max-width: 145px;
       }
-
     }
 
     & > * {
@@ -1664,7 +1662,8 @@
 
   .product-new__artlicul {
     margin-left: 5px;
-    color: $colorDark;
+    color: $colorDark !important;
+    -webkit-text-decoration-skip: none;
   }
 
   .icon3d {
