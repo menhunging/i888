@@ -811,12 +811,12 @@ h2.caption,
 }
 @media (max-width: 1279px) {
   .cardProduct-slider {
-    height: 515px;
+    height: 500px;
   }
 }
 @media (max-width: 1023px) {
   .cardProduct-slider {
-    height: 397px;
+    height: 425px;
   }
 }
 @media (max-width: 767px) {
@@ -929,6 +929,11 @@ h2.caption,
   display: block;
   text-align: right;
   margin-top: 10px;
+}
+@media (max-width: 1279px) {
+  .cardProduct-slider__desc {
+    margin-top: 5px;
+  }
 }
 @media (max-width: 1023px) {
   .cardProduct-slider__desc {

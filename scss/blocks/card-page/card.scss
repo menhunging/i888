@@ -60,11 +60,11 @@
   }
 
   @include responsive1279 {
-    height: 515px;
+    height: 500px;
   }
 
   @include responsive1023 {
-    height: 397px;
+    height: 425px;
   }
 
   @include responsive767 {
@@ -201,6 +201,10 @@
   display: block;
   text-align: right;
   margin-top: 10px;
+
+  @include responsive1279 {
+    margin-top: 5px;
+  }
 
   @include responsive1023 {
     font-size: 14px;
