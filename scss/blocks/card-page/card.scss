@@ -1266,12 +1266,9 @@
     background-color: $colorBlack-a4;
     padding: 15px;
 
-    @include responsive1279 {
-      opacity: 1;
-    }
-
     @include responsive1023 {
       gap: 16px;
+      opacity: 1;
     }
 
     @include responsive767 {
@@ -1648,7 +1645,7 @@
     border: solid 1px #bfbfbf;
     border-top: 0;
 
-    @include responsive1279 {
+    @include responsive1023 {
       display: flex;
       flex-direction: column;
       position: relative;

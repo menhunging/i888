@@ -1980,14 +1980,10 @@ h2.caption,
   background-color: rgba(0, 0, 0, 0.4);
   padding: 15px;
 }
-@media (max-width: 1279px) {
-  .chosen-clients__slider .chosen-clients__content {
-    opacity: 1;
-  }
-}
 @media (max-width: 1023px) {
   .chosen-clients__slider .chosen-clients__content {
     gap: 16px;
+    opacity: 1;
   }
 }
 @media (max-width: 767px) {
@@ -2349,7 +2345,7 @@ h2.caption,
   border: solid 1px #bfbfbf;
   border-top: 0;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1023px) {
   .product-new .product--hidden {
     display: flex;
     flex-direction: column;
