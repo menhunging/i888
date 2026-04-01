@@ -1486,8 +1486,9 @@ h2.caption,
   text-decoration-color: transparent;
   text-decoration-skip-ink: none;
   transition: text-decoration 0.3s;
-  margin-top: 16px;
+  padding-top: 16px;
   color: #2b2b2b;
+  border-top: solid 1px #eaeaea;
 }
 @media (hover: hover) {
   .all-characteristics-link:hover {
@@ -1513,6 +1514,7 @@ h2.caption,
 }
 .all-characteristics-link.active {
   text-decoration-color: #2b2b2b;
+  border-top: 0;
 }
 .all-characteristics-link.active::after {
   display: none;
@@ -2254,7 +2256,7 @@ h2.caption,
 }
 @media (max-width: 1279px) {
   .product-new .product-new__top {
-    padding-bottom: 7px;
+    padding-bottom: 15px;
   }
 }
 @media (max-width: 767px) {
@@ -2402,6 +2404,11 @@ h2.caption,
   padding: 0 10px;
   transition: opacity 0.3s;
   opacity: 0;
+}
+@media (max-width: 1279px) {
+  .product-new .picture-block__dots {
+    bottom: -10px;
+  }
 }
 .product-new .picture-block__dot {
   flex: 1;
